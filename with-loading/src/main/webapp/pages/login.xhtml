@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="#{localeBean.language}" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:view locale="#{localeBean.locale}">
+<h:head>
+	<title>KasPro | Login</title>
+</h:head>
+<h:body>
+	<p:growl id="growl" life="2000" />
+	<div align="center" style="margin: 10px;">
+		<h:form>
+			<table>
+				<tr>
+					<td><h:outputText value="#{msg['login.username']}" /></td>
+					<td><p:inputText value="#{login.username}" /></td>
+				</tr>
+				<tr>
+					<td><h:outputText value="#{msg['login.password']}" /></td>
+					<td><p:password value="#{login.password}" /></td>
+				</tr>
+				<tr>
+					<td><p:commandButton value="#{msg['login.button']}"
+							action="#{login.doLogin}" update="growl"
+							styleClass="ui-priority-primary" />
+					</td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
+</h:body>
+</f:view>
+</html>
